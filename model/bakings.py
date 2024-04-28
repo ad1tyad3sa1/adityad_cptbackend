@@ -86,31 +86,6 @@ class Baking(db.Model):
             "points": self.points
         }
 
-    # # CRUD update: updates user name, password, phone
-    # # returns self
-    # def update(self, name="", uid="", password="", dob='', favoritefood=''):
-    #     """only updates values with length"""
-    #     if len(name) > 0:
-    #         self.name = name
-    #     if len(uid) > 0:
-    #         self.uid = uid
-    #     if len(password) > 0:
-    #         self.set_password(password)
-    #     if dob:
-    #         self.dob = dob
-    #     if len(favoritefood) > 0:
-    #         self.favoritefood = favoritefood
-    #     db.session.commit()
-    #     return self
-
-    # CRUD delete: remove self
-    # None
-    # def delete(self):
-    #     db.session.delete(self)
-    #     db.session.commit()
-    #     return None
-
-
 """Database Creation and Testing """
 
 # Builds working data for testing

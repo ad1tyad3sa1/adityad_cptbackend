@@ -88,9 +88,13 @@ class Baking(db.Model):
 
 """Database Creation and Testing """
 
+# Builds working data for testing
 def initBakings():
     with app.app_context():
-        db.create_all() 
+        """Create database and tables"""
+        db.create_all() # Create database tables
+        """Tester data for table"""
+        # List of ingredients for various baked goods
         ingredients_list = [
             ["flour", "egg", "sugar", "butter"],
             ["cookie", "cocoa"],
@@ -123,9 +127,10 @@ def initBakings():
             ["sugar", "butter"],
             ["sugar", "milk"]
         ]
-
+        # Sorting each ingredient list alphabetically
         for i in ingredients_list:
             i.sort()
+        # List of baked goods
         baked_goods_list = [
             "cookie",
             "chocolate chip cookie",
@@ -158,14 +163,14 @@ def initBakings():
             "frosting",
             "glaze"
         ]
-        
+        # List of points associated with each baked good
         points_list = [4, 2, 2, 2, 4, 4, 4, 4, 4, 2, 2, 3, 2, 4, 4, 4, 2, 3, 2, 3, 3, 3, 3, 4, 2, 2, 2, 3, 2, 2]
 
-
+        # Creating Baking objects for each set of ingredients, baked goods, and points
         bakings = []
         for i in range(len(ingredients_list)):
             temp = Baking(recpie=json.dumps(ingredients_list[i]), name=baked_goods_list[i], points=points_list[i])
             bakings.append(temp)
-        
+        """Builds sample user/note(s) data"""
         for baking in bakings:
             baking.create()
